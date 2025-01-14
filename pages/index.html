@@ -24,23 +24,25 @@
         <div class="logo">C.L.U.E</div>
     </section>-->
     <nav class="p-3 flex bg-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md">
-        <a href="#" id="brand" class="flex gap-2 items-center flex-1">
-            <img class="object-cover max-w-12 max-h-12" src="./images/clue logo.png" alt="Logo">
+        <a href="https://www.banasthali.org/" id="brand" class="flex gap-2 items-center flex-1">
+            <img class="object-cover max-w-12 max-h-12" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
             <span class="text-lg font-medium font-display">C.L.U.E</span>
         </a>
         
         <div id="nav-menu" class="hidden lg:flex gap-12 " >
-          <a href="#" class="font-medium hover:text-blue-800">Home</a>
-          <a href="#" class="font-medium hover:text-blue-800" >Event Calendar</a>
-          <a href="#" class="font-medium hover:text-blue-800">Clubs</a>
-          <a href="#" class="font-medium hover:text-blue-800">Departments</a>
+          <a href="index.html" class="font-medium hover:text-blue-800">Home</a>
+          <!-- <a href="#" class="font-medium hover:text-blue-800" >Event Calendar</a> -->
+          <a href="event_page.html" class="font-medium hover:text-blue-800">Clubs</a>
+          <a href="dept_page.html" class="font-medium hover:text-blue-800">Departments</a>
         </div>
         <div class="hidden lg:flex flex-1 justify-end">
-        <button class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600" >
+            <button 
+            class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600" 
+            onclick="window.location.href='index1.html'">
             <i class="fa-solid fa-circle-user"></i>
-          <span>My Profile</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
+            <span>My Profile</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
     </div>
     
         <button class="p-2 lg:hidden" onclick="handleMenu()">
@@ -57,10 +59,10 @@
                 </button>
              </div>
              <div class="mt-6"> 
-                <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Home</a>
-                 <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Event Calendar</a> 
-                 <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Clubs</a> 
-                 <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Departments</a> 
+                <a href="index.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Home</a>
+                 <!-- <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Event Calendar</a>  -->
+                 <a href="event_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Clubs</a> 
+                 <a href="dept_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Departments</a> 
                 </div> 
                 <div class="h-[1px] bg-grey-500 md:min-h-32 md:min-w-32"></div>
                 <button class="mt-6 w-full flex gap-2 items-center px-2 py-4 rounded-lg hover:bg-red-400" >
@@ -70,7 +72,7 @@
         </div>
     </nav>
     <main class="mt-16">
-        <div id="hero" class="min-h-screen bg-gradient-to-b from-blue-100 via-pwhitebg-white to-transparent "> 
+        <div id="hero" class="min-h-screen bg-gradient-to-b from-blue-200 via-purple-200 to-transparent "> 
             <div id="hero-container" class="max-w-4xl mx-auto px-6 pt-6 pb-32 flex flex-col sm:items-cente sm:text-center sm-mt-12">
                 <div id="eventCal" class="flex items-center my-6 gap-2 border border-blue-500 md:min-h-32 md:min-w-32
                  bg-blue-100 rounded-lg px-3 py-1 w-fit shadow-md hover:shadow-lg hover:translate-y-1 transition group">
@@ -78,16 +80,59 @@
                     <p class="font-display font-medium text-blue-600">View <span class="text-blue-800">Event Calender</span></p>
                     <i class="fa-solid fa-arrow-right text-blue-600 group-hover:translate-x-1 transition duration-500 md:min-h-32 md:min-w-32"></i>
                 </div>
-                <h1 class="text-4xl font-semibold leading-snug mt-4 sm:text-6xl sm:leading-normal">CLUE is...</h1>
-                <p class="text-xl mt-4 sm:text-2xl sm:mt-8 text-gray-800"> clue does...</p>
-                <div id="buttons-container" class="mt-12 flex flex-col sm:flex-row">
-                    <button class="px-8 py-3 font-semibold rounded-lg text-slabg-white bg-blue-600 shadow-sm hover:bg-opacity-90" >Login</button>
-                    <button class="px-8 py-3 font-semibold rounded-lg bg-white border-gray-200">Button</button>
-                </div>
+                <div class="w-full h-64 relative bg-gray-200 overflow-hidden">
+                    <!-- Slide Container -->
+                    <div id="slideshow" class="flex w-full h-full transition-transform duration-500">
+                      <img src="./images/aim_act.jpg" alt="Banner 1" class="w-full h-full object-cover">
+                      <img src="./images/architecture.jpg" alt="Banner 2" class="w-full h-full object-cover">
+                      <img src="./images/pragyaMandir.jpg" alt="Banner 3" class="w-full h-full object-cover">
+
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="prev" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full">❮</button>
+                    <button id="next" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-4 py-2 rounded-full">❯</button>
+                  </div>
+                  
+                  <script>
+                    // JavaScript for Slideshow Functionality
+                    const slideshow = document.getElementById('slideshow');
+                    const slides = slideshow.children;
+                    const totalSlides = slides.length;
+                    let currentSlide = 0;
+                  
+                    const updateSlide = () => {
+                      slideshow.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    };
+                  
+                    document.getElementById('prev').addEventListener('click', () => {
+                      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                      updateSlide();
+                    });
+                  
+                    document.getElementById('next').addEventListener('click', () => {
+                      currentSlide = (currentSlide + 1) % totalSlides;
+                      updateSlide();
+                    });
+                  
+                    // Auto-slide every 5 seconds
+                    setInterval(() => {
+                      currentSlide = (currentSlide + 1) % totalSlides;
+                      updateSlide();
+                    }, 5000);
+                  </script>
+            
+                <h1 class="text-2xl font-extrabold text-center leading-tight mt-4 sm:text-6xl sm:leading-snug text-blue-800">
+                    College Link Up for Events
+                  </h1>
+                  <p class="font-small mt-4 sm:text-xl sm:mt-8 text-gray-700 text-center leading-relaxed max-w-3xl mx-auto">
+                    We are a one-stop platform aiming to bridge the gap between students and campus events.<br>
+                    CLUE ie. College Link-Up or events aim to serve as a one-stop platform to bridge the gap between students
+                    in the campus and the events, be it club or department events happening on campus!
+                  </p>
 
 
             </div>
-            <div id="club-container" class="flex flex-col gap-8">
+            <div id="club-container" class="flex flex-col gap-8 ">
                 <div id="club-titles" class="flex justify-center gap-6">
                     <img class="translate-y-2" src="" alt>
                     <span class="text-5xl">Explore the Clubs</span>
@@ -101,7 +146,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/thehrav.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -109,7 +154,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/codechef_banasthali_university_campus_chapter_logo.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -117,7 +162,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/gfg.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -152,7 +197,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/gdsc.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -160,7 +205,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/hackerearth.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -168,7 +213,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/leanIn.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -176,7 +221,7 @@
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
-                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/innovocation.jpg" alt="">
                         <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
                     </div>
                     <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
@@ -262,7 +307,9 @@
         </div>
         
         <div id="bento-grid" class="h-29 px-6 py-12 max-w-7xl mt-16 mx-auto">
-            <h2 class="text-5xl sm:font-semibold mb-14  text-center">NOTICES</h2>
+            <h2 class="text-xl font-extrabold text-center leading-tight mt-4 sm:text-4xl sm:leading-snug text-slate-700">
+                Notices
+              </h2>
             <div id="grid-container" class="flex flex-col gap-6 lg:grid lg:grid-cols-3" >
 
                 <div class=" row-start-1 row-end-3 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
@@ -385,14 +432,14 @@
         
     </main>
     <footer class="container">
-        <div class="rounded-lg border lg:border-none lg:bg-gray-50 bg-gray-50 flex flex-col lg:flex-row-reverse items-center px-8 py-12 gap-8">
-            <a href="#" class="font-light font-diaplay">Documentation</a>
+        <div class="rounded-lg border lg:border-none lg:bg-sky-200 bg-sky-50 flex flex-col lg:flex-row-reverse items-center px-8 py-12 gap-8">
+            <a href="https://www.banasthali.org/" class="font-light font-diaplay">www.banasthali.org</a>
             <div class="flex gap-8 text-lg">
                 <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-envelope"></i></a>
                 <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-github"></i></a>
             </div>
             <a href="#" id="brand" class="flex gap-2 items-center flex-1">
-                <img class="object-cover max-w-12 max-h-12" src="./images/clue logo.png" alt="Logo">
+                <img class="object-cover max-w-12 max-h-12" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
                 <span class="text-lg font-medium font-display">C.L.U.E</span>
             </a>
         </div>

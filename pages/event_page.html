@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUE Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+    <header class="bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-md py-4 px-8 flex justify-between items-center">
+        <div class="text-4xl font-extrabold tracking-wide">C.L.U.E</div>
+    </header>
+
+    <header class="bg-blue-100 py-4 px-8">
+        <h1 class="text-center text-2xl font-semibold text-blue-900">Events</h1>
+    </header>
+
+    <main class="container mx-auto p-6 flex flex-col gap-6">
+        <!-- Slideshow -->
+        <section class="bg-white rounded-lg shadow-lg p-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Slideshow of Event Photos</h2>
+            <div class="w-full h-48 bg-gray-200 rounded-lg flex justify-center items-center text-gray-600 text-lg font-semibold">
+                [Slideshow Placeholder]
+            </div>
+        </section>
+
+        <!-- Events -->
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Departments</h2>
+            <div class="flex gap-4 overflow-x-auto">
+                <div class="flex-none w-60 h-48 bg-white rounded-lg shadow-md transform transition hover:scale-105">
+                    <a href="#"><img class="w-full h-full object-cover rounded-lg" src="https://via.placeholder.com/150" alt="Event 1"></a>
+                </div>
+                <div class="flex-none w-60 h-48 bg-white rounded-lg shadow-md transform transition hover:scale-105">
+                    <a href="#"><img class="w-full h-full object-cover rounded-lg" src="https://via.placeholder.com/150" alt="Event 2"></a>
+                </div>
+                <div class="flex-none w-60 h-48 bg-white rounded-lg shadow-md transform transition hover:scale-105">
+                    <a href="#"><img class="w-full h-full object-cover rounded-lg" src="https://via.placeholder.com/150" alt="Event 3"></a>
+                </div>
+                <div class="flex-none w-60 h-48 bg-white rounded-lg shadow-md transform transition hover:scale-105">
+                    <a href="#"><img class="w-full h-full object-cover rounded-lg" src="https://via.placeholder.com/150" alt="Event 4"></a>
+                </div>
+            </div>
+            <div class="text-center mt-4 text-blue-600 font-semibold cursor-pointer hover:text-blue-800">More...</div>
+        </section>
+
+        <!-- Quick Links -->
+        <section class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Quick Links</h2>
+            <div class="flex flex-col gap-4">
+                <div class="p-4 bg-gray-100 border border-gray-300 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                    Help
+                </div>
+                <div class="p-4 bg-gray-100 border border-gray-300 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                    FAQ
+                </div>
+                <div class="p-4 bg-gray-100 border border-gray-300 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                    Contact
+                </div>
+            </div>
+
+            <!-- Departments -->
+            <div class="mt-6">
+                <h3 class="text-xl font-semibold border-b border-gray-300 pb-2 mb-4">Departments</h3>
+                <div class="flex flex-col gap-2">
+                    <a href="literary-clubs.html" class="text-blue-600 font-semibold hover:text-blue-800">Literary Clubs</a>
+                    <a href="tech-clubs.html" class="text-blue-600 font-semibold hover:text-blue-800">Tech Clubs</a>
+                    <a href="performing-art-clubs.html" class="text-blue-600 font-semibold hover:text-blue-800">Performing Art Clubs</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

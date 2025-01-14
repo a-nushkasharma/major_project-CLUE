@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta property="pg:title" content="CLUE">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="College Link-Up for Events">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="stylesheet" href="styles.css">
+    <link href="output.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,500 md:min-h-32 md:min-w-32..800;1,500 md:min-h-32 md:min-w-32..800&family=Poppins:wght@200">;
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+    <!--
+    <section>
+        <div class="logo">C.L.U.E</div>
+    </section>-->
+    <nav class="p-3 flex bg-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md">
+        <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+            <img class="object-cover max-w-12 max-h-12" src="./images/clue logo.png" alt="Logo">
+            <span class="text-lg font-medium font-display">C.L.U.E</span>
+        </a>
+        
+        <div id="nav-menu" class="hidden lg:flex gap-12 " >
+          <a href="#" class="font-medium hover:text-blue-800">Home</a>
+          <a href="#" class="font-medium hover:text-blue-800" >Event Calendar</a>
+          <a href="#" class="font-medium hover:text-blue-800">Clubs</a>
+          <a href="#" class="font-medium hover:text-blue-800">Departments</a>
+        </div>
+        <div class="hidden lg:flex flex-1 justify-end">
+        <button class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600" >
+            <i class="fa-solid fa-circle-user"></i>
+          <span>My Profile</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+    
+        <button class="p-2 lg:hidden" onclick="handleMenu()">
+          <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+    
+        <div id="nav-dialog" class="hidden fixed z-10 md:hidden  bg-white inset-0 p-3"> 
+            <div id="nav-bar" class="flex justify-between"> 
+                <a href="#" id="brand" class="flex gap-2 items-center">
+                     <img class="object-cover max-w-12 max-h-12" src="./images/clue logo.png" alt="Logo"> 
+                </a>
+                 <button class="p-2 md:hidden flex items-center" onclick="handleMenu()"> 
+                    <i class="fa-solid fa-xmark text-gray-600"></i> 
+                </button>
+             </div>
+             <div class="mt-6"> 
+                <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Home</a>
+                 <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Event Calendar</a> 
+                 <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Clubs</a> 
+                 <a href="#" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Departments</a> 
+                </div> 
+                <div class="h-[1px] bg-grey-500 md:min-h-32 md:min-w-32"></div>
+                <button class="mt-6 w-full flex gap-2 items-center px-2 py-4 rounded-lg hover:bg-red-400" >
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                  </button>
+        </div>
+    </nav>
+    <main class="mt-16">
+        <div id="hero" class="min-h-screen bg-gradient-to-b from-blue-100 via-pwhitebg-white to-transparent "> 
+            <div id="hero-container" class="max-w-4xl mx-auto px-6 pt-6 pb-32 flex flex-col sm:items-cente sm:text-center sm-mt-12">
+                <div id="eventCal" class="flex items-center my-6 gap-2 border border-blue-500 md:min-h-32 md:min-w-32
+                 bg-blue-100 rounded-lg px-3 py-1 w-fit shadow-md hover:shadow-lg hover:translate-y-1 transition group">
+                    <div class="w-2 h-2 bg-blue-500 md:min-h-32 md:min-w-32 rounded-full border border-blue-600"></div>
+                    <p class="font-display font-medium text-blue-600">View <span class="text-blue-800">Event Calender</span></p>
+                    <i class="fa-solid fa-arrow-right text-blue-600 group-hover:translate-x-1 transition duration-500 md:min-h-32 md:min-w-32"></i>
+                </div>
+                <h1 class="text-4xl font-semibold leading-snug mt-4 sm:text-6xl sm:leading-normal">CLUE is...</h1>
+                <p class="text-xl mt-4 sm:text-2xl sm:mt-8 text-gray-800"> clue does...</p>
+                <div id="buttons-container" class="mt-12 flex flex-col sm:flex-row">
+                    <button class="px-8 py-3 font-semibold rounded-lg text-slabg-white bg-blue-600 shadow-sm hover:bg-opacity-90" >Login</button>
+                    <button class="px-8 py-3 font-semibold rounded-lg bg-white border-gray-200">Button</button>
+                </div>
+
+
+            </div>
+            <div id="club-container" class="flex flex-col gap-8">
+                <div id="club-titles" class="flex justify-center gap-6">
+                    <img class="translate-y-2" src="" alt>
+                    <span class="text-5xl">Explore the Clubs</span>
+                    <img class=" scale-x-100 translate-y-2" src="" alt>
+                </div>
+            
+                <div id="club-lines-group" class="flex flex-col gap-4">
+                <div id="line1" class="flex flex-wrap gap-4 w-screen -translate-x-48 transition-transform ease-linear ">
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32 ">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+
+                </div>
+                <div id="line2" class="flex flex-wrap gap-4 w-screen -translate-x-36 transition-transform ease-linear">
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32 ">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32 ">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+
+                </div>
+                <div id="line3" class="flex flex-wrap md:hidden gap-4 w-screen -translate-x-48 transition-transform ease-linear">
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-24 min-h-24 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                    <div class="flex flex-col min-w-30 min-h-30 items-center justify-normal-center bg-white rounded-xl border-gray-500 md:min-h-32 md:min-w-32">
+                        <img class="w-12 h-12 md:w-16 md:h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="">
+                        <span class="text-[12px] md:text-[16px] font-semibold">Thehrav</span>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+            
+        </div>
+        
+        <div id="bento-grid" class="h-29 px-6 py-12 max-w-7xl mt-16 mx-auto">
+            <h2 class="text-5xl sm:font-semibold mb-14  text-center">NOTICES</h2>
+            <div id="grid-container" class="flex flex-col gap-6 lg:grid lg:grid-cols-3" >
+
+                <div class=" row-start-1 row-end-3 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
+                    <div class="bg-white rounded-2xl w-full h-full p-6 flex flex-col gap-6 items-center hover:bg-blue-200">
+                    <h3 class="text-2xl">Thehrav</h3>
+                    <img src="./images/aim_act.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row-start-1 row-end-4 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
+                    <div class="bg-white rounded-2xl w-full h-full p-6 flex flex-col gap-6 items-center hover:bg-blue-200"> 
+                    <h3 class="text-2xl">Thehrav</h3>
+                    <img src="./images/aim_act.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row-start-1 row-end-3 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
+                    <div class="bg-white rounded-2xl w-full h-full p-6 flex flex-col gap-6 items-center hover:bg-blue-200">                  
+                        <h3 class="text-2xl">Thehrav</h3>
+                    <img src="./images/aim_act.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row-start-3 row-end-6 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
+                    <div class="bg-white rounded-2xl w-full h-full p-6 flex flex-col gap-6 items-center hover:bg-blue-200">                 
+                        <h3 class="text-2xl">Thehrav</h3>
+                    <img src="./images/aim_act.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row-start-4 row-end-6 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
+                    <div class="bg-white rounded-2xl w-full h-full p-6 flex flex-col gap-6 items-center hover:bg-blue-200">                  
+                        <h3 class="text-2xl">Thehrav</h3>
+                    <img src="./images/aim_act.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row-start-3 row-end-6 group rounded-2xl p-1 bg-gray-500 hover:bg-blue-950">
+                    <div class="bg-white rounded-2xl w-full h-full p-6 flex flex-col gap-6 items-center hover:bg-blue-200">                  
+                        <h3 class="text-2xl">Thehrav</h3>
+                    <img src="./images/aim_act.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-3">FAQ :</h1>
+            <div class="space-y-4">
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  How many clubs are in banasthali?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  There is not a specific count as every department has several clubs.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  How can I apply for an event?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  You can apply by logging in and creating your profile.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Is there any fee to attend events?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Fee structure of each club is decided by the type of events that are hosted by them.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Can I be a part of any clubs?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Yes, you can be part of a club by contacting the club leads.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Can I have the email of club leads?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Yes, emails of each club's leads are mentioned in their club profiles.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  How to make a profile?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  You have to log in through the Banasthali email ID given by the department.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Do I get notifications of the club events?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Yes, club events' notifications will be sent 24 hours prior to your emails.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  What is the C.L.U.E, and its motto?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  C.L.U.E stands for "College Linkup of Events," where every event related to departments and their clubs is posted. Students of Banasthali Vidyapith can easily be notified about events and club activities, which increase student participation and encourage overall development.
+                </div>
+              </details>
+            </div>
+          </div>
+            
+    
+        
+        
+    </main>
+    <footer class="container">
+        <div class="rounded-lg border lg:border-none lg:bg-gray-50 bg-gray-50 flex flex-col lg:flex-row-reverse items-center px-8 py-12 gap-8">
+            <a href="#" class="font-light font-diaplay">Documentation</a>
+            <div class="flex gap-8 text-lg">
+                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+                <img class="object-cover max-w-12 max-h-12" src="./images/clue logo.png" alt="Logo">
+                <span class="text-lg font-medium font-display">C.L.U.E</span>
+            </a>
+        </div>
+        <div id="sub-footer" class="flex flex-col gap-6 items-center justify-center my-12">
+            <div class="flex-gap-2 items-center">
+                <img src="" alt>
+                <p class="class=text-sm text-gray-60">Banasthali Vidyapith C.L.U.E</p>
+
+            </div>
+            <p class="text-sm text-gray-400">©2025 C.L.U.E. All rights reserved</p>
+        </div>
+    </footer>
+
+ </body>
+ <script src="script.js"></script>
+</html>
+        
+            
+<!--
+    
+    <section class="course">
+        <h1>Notices</h1>
+        <p>Read about the latest news and events!</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>Mayukh</h3>
+                <p>Coming soon!</p>
+            </div>
+            <div class="course-col">
+                <h3>Thehrav</h3>
+                <p>New Open Mic!</p>
+            </div>
+            <div class="course-col">
+                <h3>Xeron</h3>
+                <p>Dates revealed</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="department">
+        <h1>Department Events</h1>
+        <p>Find more about events of each department!</p>
+        <div class="row">
+            <div class="department-col">
+                <img src="images/architecture.jpg">
+                <div class="layer">
+                    <h3>Literati</h3>
+                </div>
+            </div>
+            <div class="department-col">
+                <img src="images/aim_act.jpg">
+                <div class="layer">
+                    <h3>Mayukh</h3>
+                </div>
+            </div>
+            <div class="department-col">
+                <img src="images/sur_mandir.jpg">
+                <div class="layer">
+                    <h3>2n0</h3>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section class="">
+        <div class="">
+
+        </div>
+        <div class="">
+
+        </div>
+    </section>
+    <section class="footer">
+        <div class="footer-content"> 
+            <div class="footer-section about">
+                 <h1>About Us</h1>
+                  <p>We are a one-stop platform aiming to bridge the gap between students and campus events.<br>CLUE ie. College Link-Up or events aim to serve as a one-stop platorm to bridge the gap between students<br> in the campus and the events
+                    be it club or department event happening in the campus!</p> 
+            </div>
+             <div class="footer-section links"> 
+                <!--
+                <h4>Quick Links</h4>
+                 <ul>
+                    <li><a href="#">Home</a></li> 
+                    <li><a href="#">Event Calendar</a></li>
+                    <li><a href="#">Clubs</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">My Profile</a></li>
+                     </ul>
+                   
+             </div>
+              <div class="contact"> 
+                <h4>Contact Us</h4> 
+                 <a href="mailto:write2anushka24@gmail.com">clue_banasthali@gmail.com</a>
+            </div> 
+              <div class="footer-section help-faq">
+                 <h4>Help & FAQ</h4>
+                  <ul> 
+                    <li><a href="#">FAQ</a></li> 
+                    <li><a href="#">Help Center</a></li> 
+                    <li><a href="#">Support</a></li> </ul> 
+                </div> 
+            </div> 
+            <div class="footer-bottom"> &copy; 2025 C.L.U.E | Banasthali Vidyapith </div>
+    </section>
+    
+   
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+   
+
+<!--<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta property="pg:title" content="CLUE">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="College Link-Up for Events">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,500 md:min-h-32 md:min-w-32..800;1,500 md:min-h-32 md:min-w-32..800&family=Poppins:wght@200">;500 md:min-h-32 md:min-w-32;400;600;700&display=swap" rel="stylesheet">
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <section>
+        <div class="logo">C.L.U.E</div>
+    </section>
+    <header>
+        <div class="logo-container">
+            First Logo Above 
+            <div class="top-logo">
+                <a href="index.html"><img src="images/Banasthali_Vidyapeeth_Logo.png" alt="Top Logo"></a>
+                <div class="clue_logo">
+                <a href="index.html"><img src="images/clue logo.png" alt="CLUE Logo"></a>
+            </div>
+            </div>
+
+        </div>
+        <nav>
+        
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Event Calendar</a>
+                    </li>
+                    <li>
+                        <a href="event_page.html">Clubs</a>
+                    </li>
+                    <li>
+                        <a href="dept_page.html">Departments</a>
+                    </li>
+                    <li>
+                        <a href="index1.html">My Profile</a>
+                    </li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        </header>
+    <div class="text-box">
+        <img src="images/banner.png" alt="Hero Image"> 
+        <a href="" class="hero-btn">!</a>
+    </div>
+    </section>
+
+    
+    <section class="course">
+        <h1>Notices</h1>
+        <p>Read about the latest news and events!</p>
+
+        <div class="row">
+            <div class="course-col">
+                <h3>Mayukh</h3>
+                <p>Coming soon!</p>
+            </div>
+            <div class="course-col">
+                <h3>Thehrav</h3>
+                <p>New Open Mic!</p>
+            </div>
+            <div class="course-col">
+                <h3>Xeron</h3>
+                <p>Dates revealed</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="department">
+        <h1>Department Events</h1>
+        <p>Find more about events of each department!</p>
+        <div class="row">
+            <div class="department-col">
+                <img src="images/architecture.jpg">
+                <div class="layer">
+                    <h3>Literati</h3>
+                </div>
+            </div>
+            <div class="department-col">
+                <img src="images/aim_act.jpg">
+                <div class="layer">
+                    <h3>Mayukh</h3>
+                </div>
+            </div>
+            <div class="department-col">
+                <img src="images/sur_mandir.jpg">
+                <div class="layer">
+                    <h3>2n0</h3>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <section class="">
+        <div class="">
+
+        </div>
+        <div class="">
+
+        </div>
+    </section>
+    <section class="footer">
+        <div class="footer-content"> 
+            <div class="footer-section about">
+                 <h1>About Us</h1>
+                  <p>We are a one-stop platform aiming to bridge the gap between students and campus events.<br>CLUE ie. College Link-Up or events aim to serve as a one-stop platorm to bridge the gap between students<br> in the campus and the events
+                    be it club or department event happening in the campus!</p> 
+            </div>
+             <div class="footer-section links"> 
+                
+                <h4>Quick Links</h4>
+                 <ul>
+                    <li><a href="#">Home</a></li> 
+                    <li><a href="#">Event Calendar</a></li>
+                    <li><a href="#">Clubs</a></li>
+                    <li><a href="#">Departments</a></li>
+                    <li><a href="#">My Profile</a></li>
+                     </ul>
+                     
+             </div>
+              <div class="contact"> 
+                <h4>Contact Us</h4> 
+                 <a href="mailto:write2anushka24@gmail.com">clue_banasthali@gmail.com</a>
+            </div> 
+              <div class="footer-section help-faq">
+                 <h4>Help & FAQ</h4>
+                  <ul> 
+                    <li><a href="#">FAQ</a></li> 
+                    <li><a href="#">Help Center</a></li> 
+                    <li><a href="#">Support</a></li> </ul> 
+                </div> 
+            </div> 
+            <div class="footer-bottom"> &copy; 2025 C.L.U.E | Banasthali Vidyapith </div>
+    </section>
+   Javascript For toggle menu
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+
+        let lastScrollTop = 0;
+        const header = document.querySelector("header");
+
+        window.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scrolling down
+        header.style.top = "-100px";  // Hide the header
+    } else {
+        // Scrolling up
+        header.style.top = "0";  // Show the header
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+});
+    </script>
+</body>
+</html>--->

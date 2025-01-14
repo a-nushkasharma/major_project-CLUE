@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+
+<h2>Login Page</h2>
+
+<div id="loginModal" class="modal">
+  <form class="modal-content" id="loginForm">
+    <div class="imgcontainer">
+      <img src="images/Banasthali_Vidyapeeth_Logo.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="button" onclick="openProfile()">Login</button>
+      
+      <div class="remember-forget">
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </div>
+
+    <div class="container signup-container">
+      <p>Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+  </form>
+</div>
+
+<script>
+  function openProfile() {
+    window.location.href = "profile.html";
+  } 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create/Update Event</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="event_creation_form_styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form>
+            <h1>Create Event</h1>
+            
+            <label for="event-title">Event Title</label>
+            <input type="text" id="event-title" name="event-title" placeholder="Enter title..." required>
+            
+            <label for="event-description">Event Description</label>
+            <textarea id="event-description" name="event-description" rows="4" placeholder="Enter event details..." required></textarea>
+            
+            <div class="date-container">
+                <div>
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date" name="start-date" required>
+                </div>
+                <div>
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date" name="end-date" required>
+                </div>
+            </div>
+            
+            <label for="poster">Upload Event Poster</label>
+            <input type="file" id="poster" name="poster">
+            <p class="note">A poster image is required for uploading an event.</p>
+            
+            <label for="event-url">Event URL</label>
+            <input type="url" id="event-url" name="event-url" placeholder="Enter event URL..." required>
+            
+            <button type="submit">Create Event</button>
+        </form>
+    </div>
+</body>
+</html>

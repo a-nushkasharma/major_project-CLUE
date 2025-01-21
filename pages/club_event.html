@@ -1,172 +1,176 @@
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta property="pg:title" content="CLUE">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="College Link-Up for Events">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,500 md:min-h-32 md:min-w-32..800;1,500 md:min-h-32 md:min-w-32..800&family=Poppins:wght@200">;
     <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="output.css">
 </head>
+  <title>LOGOS | Official College Platform</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+  </style>
+</head>
+
 <body>
-    <!--
-    <section>
-        <div class="logo">C.L.U.E</div>
-    </section>-->
-    <section class="header">
-        <nav>
-            <div class="logo">
-           <a href="index.html"><img src="images/clue logo.png"></a>
-        </div>
-        
-            <div class="nav-links" id="navLinks">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
-                <ul>
-                    <li>
-                        <a href="">Home</a>
-                    </li>
-                    <li>
-                        <a href="">Event Calendar</a>
-                    </li>
-                    <li>
-                        <a href="event_page.html">Clubs</a>
-                    </li>
-                    <li>
-                        <a href="dept_page.html">Departments</a>
-                    </li>
-                    <li>
-                        <a href="index1.html">My Profile</a>
-                    </li>
-                </ul>
-            </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
-        </nav>
-        
-    </section>
-    <main class="main-content">
-
-        <h1 class="title">LOGOS</h1>
-
-        <div class="about-section">
-
-          <p>Highlight Photograph</p>
-
-        </div>
-
-        <h2 class="about">About:</h2>
-
-        <h3 class="from"> From Logos:</h3> 
-
-
-        <aside class="sidebar"> 
-            <p>Event Poster</p>
-        </aside>
-
-        <p>Event-1</p>
-
-      </main>
+  <nav class="p-3 flex bg-blue-950 text-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md" style="background-color: #132E57; color: white;">
+    <a href="https://www.banasthali.org/" id="brand" class="flex gap-2 items-center flex-1">
+        <img class="object-cover max-w-16 max-h-16" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
+        <img class="object-cover max-w-20 max-h-20" src="./images/clue logo.png" alt="Logo">
     
+    <div id="nav-menu" class="hidden lg:flex gap-12 " >
+      <a href="index.html" class="font-medium hover:text-blue-800">Home</a>
+      <!-- <a href="#" class="font-medium hover:text-blue-800" >Event Calendar</a> -->
+      <a href="event_page.html" class="font-medium hover:text-blue-800">Clubs</a>
+      <a href="dept_page.html" class="font-medium hover:text-blue-800">Departments</a>
+    </div>
+    <div class="hidden lg:flex flex-1 justify-end">
+        <button 
+        class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600" 
+        onclick="window.location.href='index1.html'">
+        <i class="fa-solid fa-circle-user"></i>
+        <span>My Profile</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+</div>
+
+    <button class="p-2 lg:hidden" onclick="handleMenu()">
+      <i class="fa-solid fa-bars text-gray-600"></i>
+    </button>
+
+    <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-blue-200 inset-0 p-3 text-black">
+      <!-- Nav Bar -->
+      <div id="nav-bar" class="flex justify-between">
+          <a href="#" id="brand" class="flex gap-2 items-center">
+              <img class="object-cover max-w-12 max-h-12" src="./images/clue logo.png" alt="Logo">
+          </a>
+          <button class="p-2 md:hidden flex items-center" onclick="handleMenu()">
+              <i class="fa-solid fa-xmark text-gray-600"></i>
+          </button>
+      </div>
+  
+      <!-- Menu Items -->
+      <div class="mt-6">
+          <a href="index.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Home</a>
+          <a href="event_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Clubs</a>
+          <a href="dept_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Departments</a>
+      </div>
+  
+      <!-- Divider -->
+      <div class="h-[1px] bg-gray-500 my-4"></div>
+  
+      <!-- Profile Button -->
+      <button class="mt-6 w-full flex gap-2 items-center px-2 py-4 rounded-lg hover:bg-red-400" onclick="window.location.href='index1.html'">
+          <i class="fa-solid fa-user"></i>
+          <span>My Profile</span>
+      </button>
+  </div>
+    </nav>
+
+  <!-- Hero Section -->
+  <section class="bg-indigo-100 py-16 mt-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-indigo-900">Welcome to LOGOS</h2>
+      <p class="mt-4 text-lg text-gray-700">
+        LOGOS is the official platform for creativity, innovation, and collaboration within our college. Explore academic events, podcasts, and creative projects that showcase the brilliance of our community.
+      </p>
      
-
-</style>
-</head>
-
-
-<footer>
-    <div class="form-container">
-        <div class="newsletter-text">
-            <p>Subscribe to our newsletter for updates and promotions.</p>
-        </div>
-        <div class="newsletter-form">
-            <form class="subscription">
-                <div class="add-email">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="button">Subscribe</button>
-                </div>
-            </form>
-        </div>
     </div>
-    <div class="footer-container">
-        <div class="footer-col">
-            <!-- Column 1: Logo and Text -->
-            <h2>Logo</h2>
-            <p>Some text about your company.</p>
-        </div>
+  </section>
 
-        <div class="footer-col">
-            <!-- Column 2: Links -->
-            <h2>Links</h2>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <!-- Add more links as needed -->
-            </ul>
-        </div>
+  
 
-        <div class="footer-col">
-            <!-- Column 3: Resources -->
-            <h2>Resources</h2>
-            <ul>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Support</a></li>
-                <!-- Add more resource links as needed -->
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <!-- Column 4: Social Media -->
-            <h2>Social Media</h2>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <!-- Add more social media links as needed -->
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <!-- Column 4: Social Media -->
-            <h2>Social Media</h2>
-            <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <!-- Add more social media links as needed -->
-            </ul>
-        </div>
+  <!-- Highlights Section -->
+  <section id="highlights" class="bg-gray-100 py-12 rounded-lg shadow-md">
+   
+    <!-- Banner Box -->
+    <div class="bg-white rounded-lg overflow-hidden shadow-lg max-w-5xl mx-auto">
+      <img src="./images/bannerbv.jpg" alt="Highlight 1" class="w-full h-63 object-cover">
     </div>
-    <div class="footer-author">
-        <div class="footer-designed">
-            <p>© Copyright A&J Associates. All Rights Reserved. Designed by <a href="" class="author-name">Adnan Khan</a></p>
-        </div>
-        <div class="footer-terms">
-            <ul class="footer-terms-ul">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-                <li><a href="#">Facebook</a></li>
-               
-                <!-- Add more social media links as needed -->
-            </ul>
-        </div>
+  </section>
+
+  <!-- About Section -->
+  <div id="about" class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-indigo-900 mb-8">About LOGOS</h2>
+      <p class="text-lg leading-relaxed text-center text-gray-700">
+        LOGOS is a student-driven platform designed to bring ideas to life. Our mission is to foster innovation and collaboration through events, podcasts, and creative initiatives. We provide a hub for students and faculty to connect, create, and inspire.
+      </p>
     </div>
+  </section>
+
+    <!-- From LOGOS Section -->
+<section id="events" class="py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section Title -->
+    <h2 class="text-4xl font-bold text-center text-indigo-900 mb-6 bg-blue-200">From LOGOS</h2>
+    <p class="text-lg text-gray-700 text-center mb-8">
+      Explore the latest events, podcasts, and creative projects from LOGOS. Dive into the highlights of our vibrant college community.
+    </p>
+
+    <!-- Box Around the Entire Section -->
+    <div class="bg-gray-100 p-10 rounded-lg shadow-lg">
+      <!-- Grid of Event Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <img src="./images/event 1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-48 object-cover">
+          <p class="text-lg font-semibold text-indigo-800 text-center">Vagmita</p>
+          <a href="event.html"></a>
+        </div>
+        <!-- Event 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <img src="./images/event2.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-48 object-cover">
+          <p class="text-lg font-semibold text-indigo-800 text-center">Speak Now</p>
+        </div>
+        <!-- Event 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <img src="./images/event3.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-48 object-cover">
+          <a class="text-lg font-semibold text-indigo-800 text-center justify-center" href="event.html">Orientation</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+  
+<footer class="w-full bg-sky-50">
+  <div class="rounded-lg border lg:border-none lg:bg-sky-200 bg-sky-50 flex flex-col lg:flex-row-reverse items-center px-8 py-12 gap-8">
+      <a href="https://www.banasthali.org/" class="font-light font-diaplay">www.banasthali.org</a>
+      <div class="flex gap-8 text-lg">
+          <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-envelope"></i></a>
+          <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+          <img class="object-cover max-w-12 max-h-12" src="./images/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
+          <span class="text-lg font-medium font-display">C.L.U.E</span>
+      </a>
+  </div>
+  <div id="sub-footer" class="flex flex-col gap-6 items-center justify-center my-12">
+      <div class="flex-gap-2 items-center">
+          <img src="" alt>
+          <p class="class=text-sm text-gray-60">Banasthali Vidyapith C.L.U.E</p>
+
+      </div>
+      <p class="text-sm text-gray-400">©2025 C.L.U.E. All rights reserved</p>
+  </div>
 </footer>
-   <!---Javascript For toggle menu------->
-    <script>
-        var navLinks=document.getElementById("navLinks");
-        function showMenu(){
-            navLinks.style.right="0";
-
-        }
-        function hideMenu(){
-            navLinks.style.right="-200px";
-        }
-    </script>
+  
 </body>
+<script src="script.js"></script>
 </html>

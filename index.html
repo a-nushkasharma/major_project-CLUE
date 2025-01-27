@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUE </title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,500 md:min-h-32 md:min-w-32..800;1,500 md:min-h-32 md:min-w-32..800&family=Poppins:wght@200">;
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/static/output.css">
+</head>
+
+<body>
+    
+    <!--
+    <section>
+        <div class="logo">C.L.U.E</div>
+    </section>-->
+    <nav class="p-3 flex bg-blue-950 text-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md" style="background-color: #132E57; color: white;">
+        <a href="https://www.banasthali.org/" id="brand" class="flex gap-2 items-center flex-1">
+            <img class="object-cover max-w-16 max-h-16" src="/static/img/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
+            <img class="object-cover max-w-13 max-h-12" src="/static/img/clue logo.png" alt="Logo2">
+            
+            
+        </a>
+        
+        <div id="nav-menu" class="hidden lg:flex gap-12 " >
+          <a href="/template/index.html" class="font-medium hover:text-blue-800">Home</a>
+          <!-- <a href="#" class="font-medium hover:text-blue-800" >Event Calendar</a> -->
+          <a href="/template/event_page.html" class="font-medium hover:text-blue-800">Clubs</a>
+          <a href="/template/dept_page.html" class="font-medium hover:text-blue-800">Departments</a>
+        </div>
+        <div class="hidden lg:flex flex-1 justify-end">
+            <button 
+            class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600" 
+            onclick="window.location.href='/template/index1.html'">
+            <i class="fa-solid fa-circle-user"></i>
+            <span>My Profile</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+    </div>
+    
+        <button class="p-2 lg:hidden" onclick="handleMenu()">
+          <i class="fa-solid fa-bars text-gray-600"></i>
+        </button>
+    
+        <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-blue-200 inset-0 p-3 text-black">
+          <!-- Nav Bar -->
+          <div id="nav-bar" class="flex justify-between">
+              <a href="#" id="brand" class="flex gap-2 items-center">
+                  <img class="object-cover max-w-12 max-h-12" src="/static/img/clue logo.png" alt="Logo">
+              </a>
+              <button class="p-2 md:hidden flex items-center" onclick="handleMenu()">
+                  <i class="fa-solid fa-xmark text-gray-600"></i>
+              </button>
+          </div>
+      
+          <!-- Menu Items -->
+          <div class="mt-6">
+              <a href="/template/index.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Home</a>
+              <a href="/template/event_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Clubs</a>
+              <a href="/template/dept_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Departments</a>
+          </div>
+      
+          <!-- Divider -->
+          <div class="h-[1px] bg-gray-500 my-4"></div>
+      
+          <!-- Profile Button -->
+          <button class="mt-6 w-full flex gap-2 items-center px-2 py-4 rounded-lg hover:bg-red-400" onclick="window.location.href='/template/index1.html'">
+              <i class="fa-solid fa-user"></i>
+              <span>My Profile</span>
+          </button>
+      </div>
+      
+      
+          
+      </div>
+      
+    </nav>
+  
+   
+    <main >
+        <!-- <div class="w-full h-[50vh] bg-cover bg-center"> -->
+            <!-- <img src="./images/event_image.jpg"> -->
+    <!-- </div> -->
+
+    <div id="slideshow container" class="w-full h-[80vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] bg-cover bg-center relative overflow-hidden mt-10 md:block hidden">
+      <!-- Slideshow Container -->
+      <div id="slideshow" class=" absolute top-0 left-0 flex w-full  md:h-[70vh] lg:h-[80vh] transition-transform duration-1000 ease-in-out">
+        <!-- Slide 2 -->
+        <div class="w-full h-full flex-shrink-0">
+          <img src="/static/img/event_image2.jpg" class="w-full h-full object-cover" alt="Event 2">
+        </div>
+        <!-- Slide 3 -->
+        <div class="w-full h-full flex-shrink-0">
+          <img src="/static/img/event_image3.jpg" class="w-full h-full object-cover" alt="Event 3">
+        </div>
+        <div class="w-full h-full flex-shrink-0">
+          <img src="/static/img/event_image4.jpg" class="w-full h-full object-cover" alt="Event 3">
+        </div>
+        <div class="w-full h-full flex-shrink-0">
+          <img src="/static/img/event_image5.jpg" class="w-full h-full object-cover" alt="Event 3">
+        </div>
+        <div class="w-full h-full flex-shrink-0">
+          <img src="/static/img/event_image6.jpg" class="w-full h-full object-cover" alt="Event 3">
+          </div>
+      </div>  
+          <!-- Navigation Buttons -->
+      <button id="prev" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-900 z-10">
+        ❮
+      </button>
+      <button id="next" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-purple-800 text-white px-4 py-2 rounded hover:bg-purple-900 z-10">
+        ❯
+      </button>
+    </div>
+    
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  console.log("Slideshow initialized"); // Debug message
+  const slideshow = document.getElementById('slideshow');
+  const slides = slideshow.children;
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  let currentIndex = 0;
+
+  window.addEventListener('resize', () => {
+    updateSlidePosition(); // Reposition slides based on current width
+});
+
+
+  function updateSlidePosition() {
+    slideshow.style.transform = `translateX(-${currentIndex * 100}%)`;
+    console.log(`Current Index: ${currentIndex}`); // Debug current index
+  }
+
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+    updateSlidePosition();
+  });
+
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+    updateSlidePosition();
+  });
+
+  // Auto-slide functionality
+  setInterval(() => {
+    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+    updateSlidePosition();
+  }, 5000);
+});
+
+</script>
+
+    
+
+           
+              
+
+    <div id="notice" class="mt-4">
+     <div class="px-4 py-10 bg-white shadow-md rounded-lg">
+       <h2 class="text-3xl font-bold mb-4 text-gray-800">Latest from Campus</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Latest News/Notices -->
+           <div class="border-t-4 border-yellow-400 rounded-md bg-gray-100 p-6 h-72 overflow-hidden">
+            <div class="flex items-center mb-4">
+                <span class="text-blue-900 font-bold text-lg"><i class="fa-solid fa-newspaper"></i> Latest News/Notices</span>
+            </div>
+              <div class="relative h-40 overflow-hidden">
+                <ul
+                  id="news-ticker"
+                  class="space-y-2 text-sm text-blue-700 transition-all duration-500"
+                >
+                  <li>Blitzschlag’25 will be held from 06th to 09th February 2025</li>
+                  <li>
+                    Advertisement for JRF project on "Development of Novel Electrocatalyst
+                    ..."
+                  </li>
+                  <li>Important notice regarding Semester Exams AY 2024-25</li>
+                </ul>
+              </div>
+              <button class="mt-4 text-white bg-blue-900 px-4 py-1 text-sm rounded hover:bg-purple-900">
+                View all »
+              </button>
+              
+            </div>
+        
+            <!-- Upcoming Department Events -->
+            <div class="border-t-4 border-yellow-400 rounded-md bg-gray-100 p-6 h-72 overflow-hidden">
+              <div class="flex items-center mb-4">
+                <span class="text-blue-900 font-bold text-lg"> <i class="fa-regular fa-calendar"></i> From Departments</span>
+              </div>
+              <div class=" mt-2 relative h-40 overflow-hidden">
+                <ul
+                  id="dept-ticker"
+                  class="space-y-2 text-sm text-blue-700 transition-all duration-500"
+                >
+                  <li>Blitzschlag’25 will be held from 06th to 09th February 2025</li>
+                  <li>
+                    Advertisement for JRF project on "Development of Novel Electrocatalyst
+                    ..."
+                  </li>
+                  <li>Important notice regarding Semester Exams AY 2024-25</li>
+                </ul>
+              </div>
+              <button class="mt-4 text-white bg-blue-900 px-4 py-1 text-sm rounded hover:bg-purple-900">
+                View all »
+              </button>
+              
+              </button>
+            </div>
+        
+            <!-- Upcoming Club Events  -->
+            <div class="border-t-4 border-yellow-400 rounded-md bg-gray-100 p-6 h-72 overflow-hidden">
+              <div class="flex items-center mb-4">
+                <span class="text-blue-900 font-bold text-lg"> <i class="fa-solid fa-user-group"></i> From Clubs</span>
+              </div>
+              <div class="mt-2 relative h-40 overflow-hidden">
+                <ul
+                  id="club-ticker"
+                  class="space-y-2 text-sm text-blue-700 transition-all duration-500"
+                >
+                  <li>Blitzschlag’25 will be held from 06th to 09th February 2025</li>
+                  <li>
+                    Advertisement for JRF project on "Development of Novel Electrocatalyst
+                    ..."
+                  </li>
+                  <li>Important notice regarding Semester Exams AY 2024-25</li>
+                </ul>
+              </div>
+              <button class="mt-4 text-white bg-blue-900 px-4 py-1 text-sm rounded hover:bg-purple-900">
+                View all »
+              </button>
+              
+            </div>
+          </div>
+          </div>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", () => {
+  const startTicker = (tickerId, speed, stepHeight) => {
+    const ticker = document.getElementById(tickerId);
+    let scrollPosition = 0;
+
+    setInterval(() => {
+      scrollPosition -= stepHeight; // Adjust stepHeight for the height of one item
+      if (Math.abs(scrollPosition) >= ticker.scrollHeight) {
+        scrollPosition = 0; // Reset to start
+      }
+      ticker.style.transform = `translateY(${scrollPosition}px)`;
+    }, speed);
+  };
+
+  // Initialize individual tickers
+  startTicker("news-ticker", 2000, 24); // Adjust speed and step height
+  startTicker("dept-ticker", 2500, 24); // Different speed and step height if needed
+  startTicker("club-ticker", 3000, 24); // Different timing for visual variation
+});
+
+        </script>
+        
+        
+        <div id="faq">
+        <div class="w-full p-6 bg-white rounded-lg shadow-lg">
+          <h1 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-3">FAQ :</h1>
+          <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                How many clubs are in Banasthali?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                There is not a specific count as every department has several clubs.
+              </div>
+            </details>
+        
+            <!-- FAQ Item 2 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                How can I apply for an event?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                You can apply by logging in and creating your profile.
+              </div>
+            </details>
+        
+            <!-- FAQ Item 3 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                Is there any fee to attend events?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                Fee structure of each club is decided by the type of events that are hosted by them.
+              </div>
+            </details>
+        
+            <!-- FAQ Item 4 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                Can I be a part of any clubs?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                Yes, you can be part of a club by contacting the club leads.
+              </div>
+            </details>
+        
+            <!-- FAQ Item 5 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                Can I have the email of club leads?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                Yes, emails of each club's leads are mentioned in their club profiles.
+              </div>
+            </details>
+        
+            <!-- FAQ Item 6 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                How to make a profile?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                You have to log in through the Banasthali email ID given by the department.
+              </div>
+            </details>
+          
+        
+            <!-- FAQ Item 7 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                Do I get notifications of the club events?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                Yes, club events' notifications will be sent 24 hours prior to your emails.
+              </div>
+            </details>
+        
+            <!-- FAQ Item 8 -->
+            <details class="border border-gray-200 rounded-md">
+              <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                What is the C.L.U.E, and its motto?
+              </summary>
+              <div class="px-4 py-2 text-gray-600">
+                C.L.U.E stands for "College Linkup of Events," where every event related to departments and their clubs is posted. Students of Banasthali Vidyapith can easily be notified about events and club activities, which increase student participation and encourage overall development.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+        
+      <!--
+        <div class="p-6 bg-white rounded-lg shadow">
+            <h1 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-3">FAQ :</h1>
+            <div class="space-y-4">
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  How many clubs are in banasthali?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  There is not a specific count as every department has several clubs.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  How can I apply for an event?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  You can apply by logging in and creating your profile.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Is there any fee to attend events?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Fee structure of each club is decided by the type of events that are hosted by them.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Can I be a part of any clubs?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Yes, you can be part of a club by contacting the club leads.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Can I have the email of club leads?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Yes, emails of each club's leads are mentioned in their club profiles.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  How to make a profile?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  You have to log in through the Banasthali email ID given by the department.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  Do I get notifications of the club events?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  Yes, club events' notifications will be sent 24 hours prior to your emails.
+                </div>
+              </details>
+              
+              <details class="border border-gray-200 rounded-md">
+                <summary class="px-4 py-2 font-medium text-gray-700 cursor-pointer hover:bg-gray-100">
+                  What is the C.L.U.E, and its motto?
+                </summary>
+                <div class="px-4 py-2 text-gray-600">
+                  C.L.U.E stands for "College Linkup of Events," where every event related to departments and their clubs is posted. Students of Banasthali Vidyapith can easily be notified about events and club activities, which increase student participation and encourage overall development.
+                </div>
+              </details>
+            </div>
+          </div>
+            
+    -->       
+    </main>
+
+    <footer class="w-full bg-blue-200">
+        <div class="rounded-lg border lg:border-none lg:bg-sky-50 bg-sky-50 flex flex-col lg:flex-row-reverse items-center px-8 py-12 gap-8">
+            <a href="https://www.banasthali.org/" class="font-light font-diaplay">www.banasthali.org</a>
+            <div class="flex gap-8 text-lg">
+                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <a href="#" id="brand" class="flex gap-2 items-center flex-1">
+                <img class="object-cover max-w-12 max-h-12" src="/static/img/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
+                <span class="text-lg font-medium font-display">C.L.U.E</span>
+            </a>
+        </div>
+        <div id="sub-footer" class="flex flex-col gap-6 items-center justify-center my-12">
+            <div class="flex-gap-2 items-center">
+                <img src="" alt>
+                <p class="class=text-sm text-gray-60">Banasthali Vidyapith C.L.U.E</p>
+
+            </div>
+            <p class="text-sm text-gray-400">©2025 C.L.U.E. All rights reserved</p>
+        </div>
+    </footer>
+
+ </body>
+ <script src="/static/script.js"></script>
+</html>
+        
+            
+
+    
+   

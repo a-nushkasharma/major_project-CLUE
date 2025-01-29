@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUE </title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,500 md:min-h-32 md:min-w-32..800;1,500 md:min-h-32 md:min-w-32..800&family=Poppins:wght@200">;
+    <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <link rel="stylesheet" href="/static/csss/output.css">
+</head>
+<body class="bg-blue-950">
+  <nav class="p-3 flex bg-blue-950 text-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md" style="background-color: #132E57; color: white;">
+    <a href="https://www.banasthali.org/" id="brand" class="flex gap-2 items-center flex-1">
+        <img class="object-cover max-w-16 max-h-16" src="/static/img/Banasthali_Vidyapeeth_Logo.png" alt="Logo">
+        <img class="object-cover max-w-13 max-h-12" src="/static/img/clue logo.png" alt="Logo2">
+        
+        
+    </a>
+    
+    <div id="nav-menu" class="hidden lg:flex gap-12 " >
+      <a href="/template/index.html" class="font-medium hover:text-blue-800">Home</a>
+      <!-- <a href="#" class="font-medium hover:text-blue-800" >Event Calendar</a> -->
+      <a href="/template/event_page.html" class="font-medium hover:text-blue-800">Clubs</a>
+      <a href="/template/dept_page.html" class="font-medium hover:text-blue-800">Departments</a>
+    </div>
+    <div class="hidden lg:flex flex-1 justify-end">
+        <button 
+        class="flex gap-2 items-center border border-gray-400 px-6 py-2 rounded-lg hover:border-gray-600" 
+        onclick="window.location.href='/template/index1.html'">
+        <i class="fa-solid fa-circle-user"></i>
+        <span>My Profile</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+</div>
+
+    <button class="p-2 lg:hidden" onclick="handleMenu()">
+      <i class="fa-solid fa-bars text-gray-600"></i>
+    </button>
+
+    <div id="nav-dialog" class="hidden fixed z-10 md:hidden bg-blue-200 inset-0 p-3 text-black">
+      <!-- Nav Bar -->
+      <div id="nav-bar" class="flex justify-between">
+          <a href="#" id="brand" class="flex gap-2 items-center">
+              <img class="object-cover max-w-12 max-h-12" src="/static/img/clue logo.png" alt="Logo">
+          </a>
+          <button class="p-2 md:hidden flex items-center" onclick="handleMenu()">
+              <i class="fa-solid fa-xmark text-gray-600"></i>
+          </button>
+      </div>
+  
+      <!-- Menu Items -->
+      <div class="mt-6">
+          <a href="/template/index.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Home</a>
+          <a href="/template/event_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Clubs</a>
+          <a href="/template/dept_page.html" class="font-medium m-3 p-3 hover:bg-blue-400 block rounded-lg">Departments</a>
+      </div>
+  
+      <!-- Divider -->
+      <div class="h-[1px] bg-gray-500 my-4"></div>
+  
+      <!-- Profile Button -->
+      <button class="mt-6 w-full flex gap-2 items-center px-2 py-4 rounded-lg hover:bg-red-400" onclick="window.location.href='/template/index1.html'">
+          <i class="fa-solid fa-user"></i>
+          <span>My Profile</span>
+      </button>
+  </div>
+  
+  
+      
+  </div>
+  
+</nav>
+
+  <main class="bg-blue-950">
+<h2>Login Page</h2>
+
+<div id="login" class="mod mt-20 flex justify-center items-center min-h-screen">
+  <form class="modal-content bg-white p-8 rounded-lg shadow-lg w-full max-w-md" id="loginForm">
+    <div class="imgcontainer mb-6 flex justify-center">
+      <img src="/static/img/Banasthali_Vidyapeeth_Logo.png" alt="Avatar" class="avatar w-24 h-24">
+    </div>
+
+    <div class="container mb-6">
+      <label for="uname" class="block text-gray-700 text-sm font-semibold mb-2"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+
+      <label for="psw" class="block text-gray-700 text-sm font-semibold mt-4 mb-2"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+
+      <button type="button" class="w-full mt-4 bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-all duration-300" onclick="window.location.href='/template/index1.html'">Login</button>
+    </div>
+
+    <div class="remember-forget text-sm flex justify-between items-center">
+      <label class="flex items-center">
+        <input type="checkbox" checked="checked" name="remember" class="mr-2"> Remember me
+      </label>
+      <span class="psw text-blue-600"><a href="#">Forgot password?</a></span>
+    </div>
+
+    <div class="container signup-container text-center mt-4">
+      <p class="text-sm">Don't have an account? <a href="#" class="text-blue-600">Sign up</a></p>
+    </div>
+  </form>
+</div>
+
+</main>
+
+<script>
+  function openProfile() {
+    window.location.href = "profile.html";
+  } 
+</script>
+
+</body>
+<script src="/static/script.js"></script>
+</html>

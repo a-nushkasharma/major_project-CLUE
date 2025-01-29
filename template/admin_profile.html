@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/static/css/profile.css">
+</head>
+<body>
+
+<!-- add event on clicking profile photo -->
+
+<div id="profileModal" class="profile-container">
+  <div class="imgcontainer">
+    <!-- Close button -->
+    <span onclick="document.getElementById('profileModal').style.display='none'" class="close" title="Close Profile">&times;</span>
+    <!-- Default profile image if no custom photo is provided -->
+    <img src="/static/img/Banasthali_Vidyapeeth_Logo.png" alt="Default Avatar" class="avatar" onerror="this.src='default_avatar.png';">
+  </div>
+
+  <div class="profile-details">
+    <h3>Akanksha Gaur</h3>
+    <p>Email: ak@example.com</p>
+  </div>
+
+  <div class="button-container">
+    <button class="update-btn" onclick="openEvent_Creation_Form()">Create Event</button>
+    <button class="delete-btn">My Events</button>
+  </div>
+</div>
+
+<script>
+  // Close the profile also when clicking outside of it
+  window.onclick = function(event) {
+    const modal = document.getElementById('profileModal');
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+  <script>
+  function openEvent_Creation_Form() {
+    window.location.href = "openEvent_Creation_Form.html";
+  }
+</script>
+</script>
+
+</body>
+</html>
